@@ -56,8 +56,8 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, string
         //Parameters = parameterFileContents.ToObject<JObject>()
     };
 
-    var subscription = Guid.Parse("{ec60880c-0517-4cf5-9d34-c8c4732633dc}");
-    string resourceGroup = "actionsdemo";
+    var subscription = Guid.Parse(subscriptionId);
+    string resourceGroup = resourceGroupName;
     string deploymentName = "deployment";
 
     //Create the resource manager client
@@ -67,21 +67,6 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, string
     var deploymentResult = resourceManagementClient.Deployments.CreateOrUpdate(resourceGroup, deploymentName, deployment);
     Console.WriteLine(string.Format("Deployment status: {0}", deploymentResult.Properties.ProvisioningState));
 
-    /*
-    // parse query parameter
-    dynamic body = await req.Content.ReadAsStringAsync();
-    
-    JObject input = JObject.Parse(body);
-    var namevalue = (string)input["name"];
-    //var rev = new string(namevalue.Reverse().ToArray());
-    //log.Info(rev);
-
-    var rev = namevalue.StartsWith("H") ? " is Awesome" : " is Bleah";
-    rev = namevalue + rev;
-
-    string randomJson = "{'Review' : '" + rev + "'}";
-    JObject val = JObject.Parse(randomJson);
-*/
     JObject val = JObject.Parse("{}");
     return req.CreateResponse(HttpStatusCode.OK, (JToken)val); 
 }
