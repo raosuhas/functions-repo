@@ -4,7 +4,8 @@
       "dependencies": {
         "Microsoft.Azure.KeyVault": "1.0.0",
         "Microsoft.Azure.Services.AppAuthentication":"1.0.3",
-        "Microsoft.IdentityModel.Clients.ActiveDirectory": "2.14.201151115"
+        "Microsoft.IdentityModel.Clients.ActiveDirectory": "2.14.201151115",
+        "Microsoft.Azure.Management.ResourceManager":"1.9.0-preview"
       }
     }
    }
