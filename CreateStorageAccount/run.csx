@@ -14,6 +14,8 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, string
 {
     log.Info("C# HTTP trigger function processed a request.");
 
+    DateTime now = DateTime.Now;
+    string name = now.ToString("G").Replace("/","").Replace(":","").Replace(" ","").ToLower();
     string template = string.Concat( @"
                     {
                     '$schema': 'https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#',
@@ -26,7 +28,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, string
                     'resources': [
                         {
                         'type': 'Microsoft.Storage/storageAccounts',
-                        'name': 'from" , miniRpName,  @"coolestapp',
+                        'name': '" , name,  @"',
                         'apiVersion': '2016-01-01',
                         'location': 'eastus2',
                         'sku': {
