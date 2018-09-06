@@ -28,7 +28,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, string
                     'resources': [
                         {
                         'type': 'Microsoft.Storage/storageAccounts',
-                        'name': 'stor-" , name,  @"',
+                        'name': 'stor" , name,  @"',
                         'apiVersion': '2016-01-01',
                         'location': 'eastus2',
                         'sku': {
