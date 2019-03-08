@@ -21,6 +21,7 @@
           "tags": [
             "ping"
           ],
+          "operationId": "PING_POST",
           "description": "Action that returns a ping",
           "parameters": [
             {
@@ -110,4 +111,4 @@
         "description": "Client Api Version."
       }
     }
-  }
+}
