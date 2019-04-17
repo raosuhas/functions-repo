@@ -243,6 +243,10 @@
       },
       "UserResource": {
         "properties": {
+            "location":{
+                "type":"string",
+                "description":"The Location of the parent resource"
+            },
             "properties" :{
                 "type": "object",
                 "description":"The definition of a created user",
