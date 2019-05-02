@@ -9,7 +9,7 @@
     "resources": [
         {
             "type": "Microsoft.Storage/storageAccounts",
-            "name": "tempstorsuhas",
+            "name": "tempstorsuhas1",
             "apiVersion": "2018-02-01",
             "location": "[variables('location')]",
             "sku": {
