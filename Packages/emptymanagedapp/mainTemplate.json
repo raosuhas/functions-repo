@@ -10,7 +10,21 @@
     "variables": {
     },
     "resources": [
-
+        {
+            "type": "Microsoft.Solutions/applicationDefinitions",
+            "apiVersion": "2019-07-01",
+            "name": "whocares",
+            "location": "[parameters('location')]",
+            "properties": {
+                "lockLevel": "None",
+                "description": "YOYOYO",
+                "displayName": "YOYOYO",
+                "packageFileUri": "https://raw.githubusercontent.com/raosuhas/functions-repo/master/Packages/emptymanagedapp.zip",
+                "managementPolicy": {
+                        "mode":"Unmanaged"
+                }
+            }
+        }
     ],
     "outputs": {
     }
