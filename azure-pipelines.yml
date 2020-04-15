@@ -5,14 +5,15 @@
 
 trigger:
 - master
+
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
     azureResourceManagerConnection: 'Microsoft Azure Internal Consumption(b5d234c6-eae5-41ca-9c58-57e8c3970023)'
     subscriptionId: 'b5d234c6-eae5-41ca-9c58-57e8c3970023'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'suhastesting'
-    location: 'East US 2'
+    resourceGroupName: 'jabrademosuhas'
+    location: 'East US'
     templateLocation: 'URL of the file'
     csmFileLink: 'https://suhastestdata.blob.core.windows.net/data/deploydevice.json'
     deploymentMode: 'Incremental'
