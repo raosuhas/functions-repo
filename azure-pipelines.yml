@@ -6,6 +6,12 @@
 trigger:
 - master
 
+
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
@@ -17,11 +23,7 @@ trigger:
     templateLocation: 'URL of the file'
     csmFileLink: 'https://suhastestdata.blob.core.windows.net/data/deploydevice.json'
     deploymentMode: 'Incremental'
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
+    
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
