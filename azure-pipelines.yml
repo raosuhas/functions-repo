@@ -30,7 +30,10 @@ steps:
   inputs:
     script: |
       echo Testing ..
-      
+      sleep 2s
+      echo Testing ..
+      sleep 2s
+      echo Testing ..
       sleep 30s
 
 - task: AzureResourceManagerTemplateDeployment@3
