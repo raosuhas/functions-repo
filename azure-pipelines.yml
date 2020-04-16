@@ -12,6 +12,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+
+- task: AzurePowerShell@5
+  inputs:
+    azureSubscription: 'Microsoft Azure Internal Consumption(b5d234c6-eae5-41ca-9c58-57e8c3970023)'
+    ScriptType: 'InlineScript'
+    Inline: |
+      Write-Host "Testing"
+      Start-Sleep -Seconds 30
+
+
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
@@ -24,6 +34,7 @@ steps:
     csmFileLink: 'https://suhastestdata.blob.core.windows.net/data/deploydevice.json'
     deploymentMode: 'Incremental'
     
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
