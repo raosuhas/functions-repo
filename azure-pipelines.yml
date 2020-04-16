@@ -43,6 +43,7 @@ steps:
     location: 'East US'
     templateLocation: 'URL of the file'
     csmFileLink: 'https://suhastestdata.blob.core.windows.net/data/deploydevice.json'
+    csmParametersFileLink: 'https://suhastestdata.blob.core.windows.net/data/nikhil.json'
     deploymentMode: 'Incremental'
     
 
