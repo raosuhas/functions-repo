@@ -12,7 +12,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo Testing ..
+      
+      sleep 10s
 - task: AzurePowerShell@5
   inputs:
     azureSubscription: 'Microsoft Azure Internal Consumption(b5d234c6-eae5-41ca-9c58-57e8c3970023)'
