@@ -1,0 +1,59 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Microsoft Azure Internal Consumption(b5d234c6-eae5-41ca-9c58-57e8c3970023)'
+    subscriptionId: 'b5d234c6-eae5-41ca-9c58-57e8c3970023'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'jabrademosuhas'
+    location: 'East US'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://suhastestdata.blob.core.windows.net/data/deploydevice.json'
+    csmParametersFileLink: 'https://suhastestdata.blob.core.windows.net/data/suhasparam.json'
+    deploymentMode: 'Incremental'
+
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo Testing ..
+      sleep 2s
+      echo Testing ..
+      sleep 2s
+      echo Testing ..
+      sleep 30s
+
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Microsoft Azure Internal Consumption(b5d234c6-eae5-41ca-9c58-57e8c3970023)'
+    subscriptionId: 'b5d234c6-eae5-41ca-9c58-57e8c3970023'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'jabrademosuhas'
+    location: 'East US'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://suhastestdata.blob.core.windows.net/data/deploydevice.json'
+    csmParametersFileLink: 'https://suhastestdata.blob.core.windows.net/data/nikhil.json'
+    deploymentMode: 'Incremental'
+    
+
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'

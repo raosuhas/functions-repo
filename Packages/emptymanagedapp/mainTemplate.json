@@ -1,0 +1,31 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]"
+        }
+    },
+    "variables": {
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Solutions/applicationDefinitions",
+            "apiVersion": "2019-07-01",
+            "name": "whocares",
+            "location": "[parameters('location')]",
+            "properties": {
+                "lockLevel": "None",
+                "description": "YOYOYO",
+                "displayName": "YOYOYO",
+                "packageFileUri": "https://raw.githubusercontent.com/raosuhas/functions-repo/master/Packages/emptymanagedapp.zip",
+                "managementPolicy": {
+                        "mode":"Unmanaged"
+                }
+            }
+        }
+    ],
+    "outputs": {
+    }
+}
