@@ -8,12 +8,25 @@
     },
     "resources": [
         {
-            "type": "Microsoft.Storage/storageAccounts",
-            "name": "tempstorsuhas1",
-            "apiVersion": "2018-02-01",
+            "type": "Microsoft.CustomProviders/resourceProviders",
+            "apiVersion": "2018-09-01-preview",
+            "name": "TestCuRP",
             "location": "[variables('location')]",
-            "sku": {
-                "name": "Standard_LRS"
+            "properties": {
+                "actions": [
+                    {
+                        "name": "ping",
+                        "routingType": "Proxy",
+                        "endpoint": "https://www.bing.com"
+                    }
+                ],
+                "resourceTypes": [
+                    {
+                        "name": "customResources",
+                        "routingType": "Proxy",
+                        "endpoint": "https://www.bing.com"
+                    }
+                ]
             }
         }
     ],
