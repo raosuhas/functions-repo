@@ -10,7 +10,7 @@
         {
             "type": "Microsoft.CustomProviders/resourceProviders",
             "apiVersion": "2018-09-01-preview",
-            "name": "TestCuRP",
+            "name": "public",
             "location": "[variables('location')]",
             "properties": {
                 "actions": [
