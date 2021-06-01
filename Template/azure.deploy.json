@@ -4,7 +4,7 @@
     "parameters": {
     },
     "variables": {
-        "location": "eastus"
+        "location": "canadacentral"
     },
     "resources": [
         {
